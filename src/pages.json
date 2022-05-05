@@ -1,16 +1,74 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
-	}
+	},
+	"tabBar": {
+		"color": "#919293",
+		"selectedColor": "#97AF13",
+		"backgroundColor": "#fff",
+		"borderStyle": "black",
+		"list": [
+			{
+				"pagePath": "pages/index/Index",
+				"text": "首页",
+				"iconPath": "static/images/tab-bar/index.png",
+				"selectedIconPath": "static/images/tab-bar/index-selected.png"
+			},
+			{
+				"pagePath": "pages/drink/Drink",
+				"text": "点餐",
+				"iconPath": "static/images/tab-bar/drink.png",
+				"selectedIconPath": "static/images/tab-bar/drink-selected.png"
+			},
+			{
+				"pagePath": "pages/take-foods/TakeFoods",
+				"text": "取餐",
+				"iconPath": "static/images/tab-bar/take-foods.png",
+				"selectedIconPath": "static/images/tab-bar/take-foods-selected.png"
+			},
+			{
+				"pagePath": "pages/mine/Mine",
+				"text": "我的",
+				"iconPath": "static/images/tab-bar/mine.png",
+				"selectedIconPath": "static/images/tab-bar/mine-selected.png"
+			}
+		]
+	},
+	"pages": [
+		{
+			"path": "pages/index/Index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/drink/Drink",
+			"style": {
+				"navigationBarTitleText": "点餐",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/take-foods/TakeFoods",
+			"style": {
+				"navigationBarTitleText": "取餐",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/mine/Mine",
+			"style": {
+				"navigationBarTitleText": "奈雪乐园",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		}
+	]
 }
