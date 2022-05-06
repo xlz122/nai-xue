@@ -1,0 +1,129 @@
+page {
+  height: auto;
+  min-height: 100%;
+}
+
+.mine-container {
+  .mine-bg {
+    width: 100%;
+    height: calc(410 / 594 * 750rpx);
+  }
+
+  .hym-btn {
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    color: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50rem;
+    font-size: $font-size-sm;
+    box-shadow: 0 0 20rpx rgba(66, 66, 66, 0.1);
+
+    &::after {
+      border: 0;
+    }
+
+    .hym-img {
+      width: 30rpx;
+      height: 30rpx;
+      margin-right: 10rpx;
+    }
+  }
+
+  .user-info {
+    padding: 0 30rpx
+  }
+
+  .level-benefit-box {
+    border-radius: 8rpx;
+    margin-bottom: 30rpx;
+    box-shadow: 0 10rpx 8rpx rgba($color: #878889, $alpha: 0.1);
+    width: 100%;
+    display: flex;
+    padding: 30rpx;
+    flex-direction: column;
+    background-color: #ffffff;
+  
+    .row {
+      display: flex;
+      padding: 30rpx 0 20rpx;
+      justify-content: space-around;
+      align-items: center;
+  
+      .grid {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        font-size: $font-size-sm;
+        color: $text-color-assist;
+        align-items: center;
+  
+        image {
+          width: 80rpx;
+          height: 80rpx;
+          margin-bottom: 10rpx;
+        }
+      }
+    }
+  }
+
+  .banner {
+    width: 100%;
+    border-radius: 8rpx;
+    margin-bottom: 30rpx;
+  }
+
+  .service-box {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 32rpx 30rpx 10rpx;
+    box-shadow: $box-shadow;
+
+    .service-content {
+      margin-bottom: 20rpx;
+      font-weight: 700;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      color: $text-color-assist;
+      font-size: $font-size-sm;
+      padding-bottom: -40rpx;
+
+      .grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40rpx;
+        width: 25%;
+        position: relative;
+
+        .image {
+          image {
+            width: 80rpx;
+            height: 80rpx;
+            margin-bottom: 20rpx;
+          }
+        }
+
+        .new-badage {
+          width: 40rpx;
+          height: 40rpx;
+          position: absolute;
+          top: 0;
+          right: 30rpx;
+        }
+      }
+    }
+  }
+}
+
+.hyk-tip {
+  padding: 30rpx 0;
+  font-size: 22rpx;
+  color: #919293;
+}
