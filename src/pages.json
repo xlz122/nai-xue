@@ -18,7 +18,7 @@
 				"selectedIconPath": "static/images/tab-bar/index-selected.png"
 			},
 			{
-				"pagePath": "pages/drink/Drink",
+				"pagePath": "pages/drink/drink",
 				"text": "点餐",
 				"iconPath": "static/images/tab-bar/drink.png",
 				"selectedIconPath": "static/images/tab-bar/drink-selected.png"
@@ -30,7 +30,7 @@
 				"selectedIconPath": "static/images/tab-bar/take-foods-selected.png"
 			},
 			{
-				"pagePath": "pages/mine/Mine",
+				"pagePath": "pages/mine/mine",
 				"text": "我的",
 				"iconPath": "static/images/tab-bar/mine.png",
 				"selectedIconPath": "static/images/tab-bar/mine-selected.png"
@@ -47,7 +47,7 @@
 			}
 		},
 		{
-			"path": "pages/drink/Drink",
+			"path": "pages/drink/drink",
 			"style": {
 				"navigationBarTitleText": "点餐",
 				"navigationBarTextStyle": "black",
@@ -63,7 +63,7 @@
 			}
 		},
 		{
-			"path": "pages/mine/Mine",
+			"path": "pages/mine/mine",
 			"style": {
 				"navigationBarTitleText": "奈雪乐园",
 				"navigationBarTextStyle": "black",
@@ -71,7 +71,15 @@
 			}
 		},
 		{
-			"path": "pages/login/Login",
+			"path": "pages/mine/member-code/MemberCode",
+			"style": {
+				"navigationBarTitleText": "会员码",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "登录",
 				"navigationBarTextStyle": "black",

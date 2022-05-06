@@ -15,12 +15,11 @@
         <view
           v-if="isLogin"
           class="font-size-lg font-weight-bold d-flex justify-content-start align-items-center"
-          @tap="userinfo"
         >
           <view class="text-truncate">{{ userInfo?.nickname }}</view>
           <view class="iconfont iconarrow-right line-height-100"></view>
         </view>
-        <view v-else class="font-size-lg font-weight-bold" @tap="login">
+        <view v-else class="font-size-lg font-weight-bold" @tap="jumpLogin">
           请点击授权登录
         </view>
         <view class="font-size-sm text-color-assist">
@@ -40,34 +39,33 @@
       </view>
       <view
         class="level-benefit flex-shrink-0 text-color-white bg-warning font-size-sm"
-        @tap="rightsAndInterests"
       >
         <view>会员权益</view>
         <view class="iconfont iconarrow-right line-height-100"></view>
       </view>
     </view>
     <view class="w-100 d-flex align-items-center just-content-center">
-      <view class="user-grid" @tap="coupons">
+      <view class="user-grid">
         <view class="value font-size-extra-lg font-weight-bold text-color-base">
-          {{ isLogin ? userInfo.couponNum : '***' }}
+          {{ isLogin ? userInfo?.couponNum : '***' }}
         </view>
         <view class="font-size-sm text-color-assist">奈雪券</view>
       </view>
-      <view class="user-grid" @tap="integrals">
+      <view class="user-grid">
         <view class="value font-size-extra-lg font-weight-bold text-color-base">
-          {{ isLogin ? userInfo.pointNum : '***' }}
+          {{ isLogin ? userInfo?.pointNum : '***' }}
         </view>
         <view class="font-size-sm text-color-assist">积分商城</view>
       </view>
-      <view class="user-grid" @tap="balance">
+      <view class="user-grid">
         <view class="value font-size-extra-lg font-weight-bold text-color-base">
-          {{ isLogin ? userInfo.balance : '***' }}
+          {{ isLogin ? userInfo?.balance : '***' }}
         </view>
         <view class="font-size-sm text-color-assist">余额</view>
       </view>
-      <view class="user-grid" @tap="giftCards">
+      <view class="user-grid">
         <view class="value font-size-extra-lg font-weight-bold text-color-base">
-          {{ isLogin ? userInfo.giftBalance : '***' }}
+          {{ isLogin ? userInfo?.giftBalance : '***' }}
         </view>
         <view class="font-size-sm text-color-assist">礼品卡</view>
       </view>
@@ -77,13 +75,16 @@
 
 <script lang="ts">
 /* global uni */
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
+import { useStore } from 'vuex';
 
 export default defineComponent({
   name: 'UserInfo',
   setup() {
-    const isLogin = ref(false);
-    const userInfo = {};
+    const $store = useStore();
+
+    const isLogin = computed(() => $store.getters.isLogin);
+    const userInfo = computed(() => $store.getters.userInfo);
 
     const avatarList = ref<string[]>([]);
 
@@ -163,10 +164,17 @@ export default defineComponent({
       });
     }
 
+    function jumpLogin(): void {
+      uni.navigateTo({
+        url: '/pages/login/login'
+      });
+    }
+
     return {
       isLogin,
       userInfo,
-      avatarChange
+      avatarChange,
+      jumpLogin
     };
   }
 });
