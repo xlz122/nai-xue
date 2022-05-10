@@ -1,7 +1,7 @@
 <template>
   <view class="container">
+    <!-- v-if="!Object.keys(order).length" -->
     <view
-      v-if="!Object.keys(orderList).length"
       class="d-flex w-100 h-100 flex-column just-content-center align-items-center"
     >
       <image class="drinks-img" src="/static/images/loading.gif"></image>
@@ -14,7 +14,7 @@
       <button class="drink-btn" type="primary" size="default" @tap="jumpDrink">
         去点餐
       </button>
-      <view class="font-size-sm text-color-primary" @tap="historyOrder">
+      <view class="font-size-sm text-color-primary" @tap="jumpHistoryOrder">
         查看历史订单
       </view>
     </view>
@@ -41,7 +41,8 @@ export default defineComponent({
       });
     }
 
-    function historyOrder(): boolean | undefined {
+    // 跳转历史订单
+    function jumpHistoryOrder(): boolean | undefined {
       if (!isLogin.value) {
         uni.navigateTo({
           url: '/pages/login/login'
@@ -49,16 +50,15 @@ export default defineComponent({
         return false;
       }
 
-      uni.showToast({
-        title: '暂未开发',
-        icon: 'none'
+      uni.navigateTo({
+        url: '/pages/history-order/HistoryOrder'
       });
     }
 
     return {
       orderList,
       jumpDrink,
-      historyOrder
+      jumpHistoryOrder
     };
   }
 });

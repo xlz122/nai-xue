@@ -1,13 +1,13 @@
 export type State = {
   isLogin: boolean;
   userInfo: unknown;
-  orderList: unknown;
+  historyOrder: unknown;
 };
 
 const state: State = {
   isLogin: false,
   userInfo: {},
-  orderList: {}
+  historyOrder: []
 };
 
 export default state;

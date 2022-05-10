@@ -81,6 +81,22 @@
 			}
 		},
 		{
+			"path": "pages/history-order/HistoryOrder",
+			"style": {
+				"navigationBarTitleText": "历史订单",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/history-order/order-detail/OrderDetail",
+			"style": {
+				"navigationBarTitleText": "订单详情",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "登录",

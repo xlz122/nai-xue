@@ -8,6 +8,7 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
+    "suppressImplicitAnyIndexErrors": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types": ["@dcloudio/types"],

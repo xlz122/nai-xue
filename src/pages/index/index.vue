@@ -11,11 +11,11 @@
     </view>
     <view class="content">
       <view class="entrance">
-        <view class="item">
+        <view class="item" @tap="jumpDrink">
           <image class="icon" src="/static/images/index/zq.png"></image>
           <view class="title">自取</view>
         </view>
-        <view class="item">
+        <view class="item" @tap="jumpAddress">
           <image class="icon" src="/static/images/index/wm.png"></image>
           <view class="title">外卖</view>
         </view>
@@ -129,10 +129,33 @@ export default defineComponent({
       });
     }
 
+    // 跳转菜单
+    function jumpDrink(): void {
+      uni.switchTab({
+        url: '/pages/drink/drink'
+      });
+    }
+
+    // 跳转收货地址
+    function jumpAddress(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      // uni.navigateTo({
+      //   url: '/pages/address/Address'
+      // });
+    }
+
     return {
       isLogin,
       userInfo,
-      jumpMemberCode
+      jumpMemberCode,
+      jumpDrink,
+      jumpAddress
     };
   }
 });
