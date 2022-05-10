@@ -97,12 +97,6 @@ export default defineComponent({
     function login(): void {
       userinfo()
         .then(res => {
-          uni.showModal({
-            title: '提示',
-            content: '登录成功',
-            showCancel: false
-          });
-
           $store.commit('setUserInfo', res);
 
           // 返回上一页

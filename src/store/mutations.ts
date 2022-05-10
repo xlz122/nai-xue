@@ -13,6 +13,10 @@ const mutations: Mutations<State> = {
     }
 
     state.userInfo = userInfo;
+  },
+  // 历史订单
+  setHistoryOrder(state, historyorder) {
+    state.historyOrder = historyorder;
   }
 };
 

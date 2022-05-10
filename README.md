@@ -43,6 +43,12 @@ yarn build:mp-weixin
 yarn build:mp-alipay
 ```
 
+## 项目效果图
+
+|首页|点餐|取餐|我的|登录|
+|---|---|---|---|---|
+|![](./src/static/design-sketch/home.jpg)|![](./src/static/design-sketch/drink.jpg)|![](./src/static/design-sketch/take-foods.jpg)|![](./src/static/design-sketch/mine.jpg)|![](./src/static/design-sketch/login.jpg)|
+
 ## 写在最后
 
 * [The MIT License (MIT)](https://github.com/xlz122/uni-app-nx/blob/master/LICENSE)

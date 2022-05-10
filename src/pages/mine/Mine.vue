@@ -78,7 +78,7 @@
           </view>
           <view>联系客服</view>
         </view>
-        <view class="grid">
+        <view class="grid" @tap="jumpHistoryOrder">
           <view class="image">
             <image src="/static/images/mine/wddd.png"></image>
           </view>
@@ -147,11 +147,26 @@ export default defineComponent({
       });
     }
 
+    // 跳转历史订单
+    function jumpHistoryOrder(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/history-order/HistoryOrder'
+      });
+    }
+
     return {
       isLogin,
       userInfo,
       jumpMemberCode,
-      jumpLogin
+      jumpLogin,
+      jumpHistoryOrder
     };
   }
 });
