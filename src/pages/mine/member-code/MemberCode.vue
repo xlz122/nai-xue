@@ -33,10 +33,11 @@
           </view>
         </view>
         <view class="qrcode d-flex just-content-center align-items-center">
-          <canvas
-            canvas-id="memberCode"
+          <image
+            src="/static/images/mine/qrcode.png"
+            mode="widthFix"
             style="width: 350rpx; height: 350rpx"
-          ></canvas>
+          ></image>
         </view>
         <view
           class="tips d-flex just-content-center align-items-center"
@@ -67,8 +68,6 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 import { useStore } from 'vuex';
-import { onShow } from '@dcloudio/uni-app';
-// import uQRCode from '@/utils/uqrcode';
 
 export default defineComponent({
   name: 'MemberCode',
@@ -77,21 +76,6 @@ export default defineComponent({
 
     const isLogin = computed(() => $store.getters.isLogin);
     const userInfo = computed(() => $store.getters.userInfo);
-
-    onShow(() => {
-      let i = 1;
-      makeMemberCode(i);
-
-      setInterval(() => {
-        i++;
-        makeMemberCode(i);
-      }, 30000);
-    });
-
-    // 生成二维码
-    function makeMemberCode(i: number): void {
-      console.log(i);
-    }
 
     return {
       isLogin,
