@@ -24,9 +24,9 @@
         </view>
         <view class="font-size-sm text-color-assist">
           当前成长值
-          {{ isLogin ? userInfo.currentValue : 0 }}
+          {{ isLogin ? userInfo?.currentValue : 0 }}
           /
-          {{ isLogin ? userInfo.currentValue + userInfo.needValue : 0 }}
+          {{ isLogin ? userInfo?.currentValue + userInfo?.needValue : 0 }}
         </view>
         <view class="w-100">
           <progress
@@ -89,7 +89,7 @@ export default defineComponent({
   setup() {
     const $store = useStore();
 
-    const isLogin = computed(() => $store.getters.isLogin);
+    const isLogin = computed<boolean>(() => $store.getters.isLogin);
     const userInfo = computed(() => $store.getters.userInfo);
 
     const avatarList = ref<string[]>([]);

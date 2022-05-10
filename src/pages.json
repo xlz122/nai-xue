@@ -41,15 +41,17 @@
 		{
 			"path": "pages/index/Index",
 			"style": {
-				"navigationBarTitleText": "首页",
-				"navigationBarTextStyle": "black",
-				"navigationBarBackgroundColor": "#ffffff"
+				"navigationStyle": "custom",
+				"mp-alipay": {
+					"transparentTitle": "always",
+					"titlePenetrate": "YES"
+				}
 			}
 		},
 		{
 			"path": "pages/drink/drink",
 			"style": {
-				"navigationBarTitleText": "点餐",
+				"navigationBarTitleText": "菜单",
 				"navigationBarTextStyle": "black",
 				"navigationBarBackgroundColor": "#ffffff"
 			}

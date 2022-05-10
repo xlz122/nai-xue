@@ -1,5 +1,5 @@
 <template>
-  <view>点餐</view>
+  <view>菜单</view>
 </template>
 
 <script lang="ts">
