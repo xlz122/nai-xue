@@ -5,7 +5,13 @@ type Mutations<T, U = any> = {
 };
 
 const mutations: Mutations<State> = {
-  setUserInfo(state, userInfo: unknown) {
+  setUserInfo(state, userInfo) {
+    if (Object.keys(userInfo).length > 0) {
+      state.isLogin = true;
+    } else {
+      state.isLogin = false;
+    }
+
     state.userInfo = userInfo;
   }
 };

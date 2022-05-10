@@ -30,7 +30,13 @@
         </view>
         <view class="w-100">
           <progress
-            :percent="growthValue"
+            :percent="
+              isLogin
+                ? (userInfo.currentValue /
+                    (userInfo.currentValue + userInfo.needValue)) *
+                  100
+                : 0
+            "
             activeColor="#ADB838"
             height="8rpx"
             border-radius="8rpx"
@@ -155,7 +161,6 @@ export default defineComponent({
           uni.saveFile({
             tempFilePath: tempFilePaths[0],
             success: res => {
-              // 替换头像路径
               avatarList.value[0] = res.savedFilePath;
               // setAvatar(res.savedFilePath);
             }

@@ -141,10 +141,17 @@ export default defineComponent({
       });
     }
 
+    function jumpLogin(): void {
+      uni.navigateTo({
+        url: '/pages/login/login'
+      });
+    }
+
     return {
       isLogin,
       userInfo,
-      jumpMemberCode
+      jumpMemberCode,
+      jumpLogin
     };
   }
 });
