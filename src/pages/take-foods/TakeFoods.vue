@@ -31,9 +31,10 @@ export default defineComponent({
   setup() {
     const $store = useStore();
 
-    const isLogin = computed(() => $store.getters.isLogin);
+    const isLogin = computed<boolean>(() => $store.getters.isLogin);
     const orderList = computed(() => $store.getters.orderList);
 
+    // 跳转菜单
     function jumpDrink(): void {
       uni.switchTab({
         url: '/pages/drink/drink'
