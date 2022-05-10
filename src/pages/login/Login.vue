@@ -1,6 +1,6 @@
 <template>
   <view>登录</view>
-  <view>{{ msg }}</view>
+  <view>{{ isLogin }}</view>
 </template>
 
 <script lang="ts">
@@ -12,11 +12,15 @@ export default defineComponent({
   setup() {
     const $store = useStore();
 
-    const msg = computed(() => $store.getters.msg);
+    const isLogin = computed(() => $store.getters.isLogin);
 
     return {
-      msg
+      isLogin
     };
   }
 });
 </script>
+
+<style lang="scss" scoped>
+@import './login.scss';
+</style>

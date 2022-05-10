@@ -61,7 +61,10 @@
             <image src="/static/images/mine/stxy.png"></image>
           </view>
           <view>送她心愿</view>
-          <image :src="newIcon" class="new-badage"></image>
+          <image
+            class="new-badage"
+            src="/static/images/mine/stxy-new.png"
+          ></image>
         </view>
         <view class="grid">
           <view class="image">
