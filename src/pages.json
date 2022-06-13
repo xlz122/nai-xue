@@ -49,6 +49,14 @@
 			}
 		},
 		{
+			"path": "pages/index/invite/Invite",
+			"style": {
+				"navigationBarTitleText": "买茶送包",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/drink/drink",
 			"style": {
 				"navigationBarTitleText": "菜单",
