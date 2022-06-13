@@ -1,0 +1,70 @@
+.invite-box {
+  padding: 40rpx 70rpx;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.progress-box {
+  width: 100%;
+  margin: 20rpx 0;
+}
+
+.to-invite-img {
+  width: 16rpx;
+  margin-left: 10rpx;
+}
+
+.help-box {
+  opacity: 0.8
+}
+
+.opacity-1 {
+  opacity: 1 !important;
+}
+
+.my-award {
+  padding: 60rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+
+  .my-award-img {
+    width: 291rpx;
+    position: absolute;
+    top: -15rpx;
+  }
+
+  .item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: #ccc;
+      width: 2rpx;
+      height: 100%;
+      right: 0;
+      top: 0;
+      transform: scaleY(0.5);
+    }
+
+    &:nth-last-child(1) {
+      &::after {
+        width: 0;
+      }
+    }
+  }
+}

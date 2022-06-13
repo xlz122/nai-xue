@@ -20,7 +20,7 @@
           <view class="title">外卖</view>
         </view>
       </view>
-      <view class="info" @tap="jumpMemberCode">
+      <view class="info">
         <view class="integral_section">
           <view class="top">
             <text class="title">我的积分</text>
@@ -33,7 +33,7 @@
             <view class="iconfont iconarrow-right"></view>
           </view>
         </view>
-        <view class="qrcode_section">
+        <view class="qrcode_section" @tap="jumpMemberCode">
           <image src="/static/images/index/qrcode.png"></image>
           <text>会员码</text>
         </view>
@@ -64,7 +64,7 @@
           </view>
         </view>
         <view class="right">
-          <view class="tea-activity">
+          <view class="tea-activity" @tap="jumpInvite">
             <image class="mark-img" src="/static/images/index/mcsb.png"></image>
             <view>买茶送包</view>
             <view class="right-img">
@@ -129,6 +129,20 @@ export default defineComponent({
       });
     }
 
+    // 买茶送包
+    function jumpInvite(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/index/invite/Invite'
+      });
+    }
+
     // 跳转菜单
     function jumpDrink(): void {
       uni.switchTab({
@@ -154,6 +168,7 @@ export default defineComponent({
       isLogin,
       userInfo,
       jumpMemberCode,
+      jumpInvite,
       jumpDrink,
       jumpAddress
     };

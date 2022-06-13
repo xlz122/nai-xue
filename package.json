@@ -34,8 +34,6 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 -n ./.changelog.config.js"
   },
   "dependencies": {
-    "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4",
     "@dcloudio/uni-app": "3.0.0-alpha-3040820220424001",
     "@dcloudio/uni-app-plus": "3.0.0-alpha-3040820220424001",
     "@dcloudio/uni-components": "3.0.0-alpha-3040820220424001",
@@ -48,31 +46,36 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3040820220424001",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3040820220424001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3040820220424001",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "@vue/cli-plugin-eslint": "^5.0.4",
-    "@vue/eslint-config-typescript": "^10.0.0",
-    "conventional-changelog": "^3.1.25",
-    "conventional-changelog-cli": "^2.2.2",
-    "eslint": "^8.14.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.7.1",
-    "husky": "^7.0.4",
-    "prettier": "^2.6.2",
-    "sass": "^1.51.0",
-    "sass-loader": "^12.6.0",
-    "vite-plugin-eslint": "^1.6.0",
     "vue": "^3.2.33",
     "vue-i18n": "^9.1.9",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@dcloudio/types": "^2.6.4",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@dcloudio/types": "^2.6.11",
     "@dcloudio/uni-automator": "3.0.0-alpha-3040820220424001",
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3040820220424001",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3040820220424001",
-    "typescript": "^4.6.3",
-    "vite": "^2.9.6"
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "@vue/cli-plugin-eslint": "^5.0.4",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "conventional-changelog": "^3.1.25",
+    "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "husky": "^8.0.1",
+    "prettier": "^2.6.2",
+    "sass": "^1.52.3",
+    "sass-loader": "^13.0.0",
+    "typescript": "^4.7.3",
+    "vite": "^2.9.9",
+    "vite-plugin-eslint": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
