@@ -79,7 +79,7 @@
 /* global uni */
 import { defineComponent, computed } from 'vue';
 import { useStore } from 'vuex';
-import { onLoad } from '@dcloudio/uni-app';
+import { onLoad, onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app';
 import { historyorder } from '@/api/history-order';
 import ListCell from '@/components/list-cell/ListCell.vue';
 
@@ -98,11 +98,30 @@ export default defineComponent({
       getHistoryOrders();
     });
 
+    // 上拉加载
+    onReachBottom(() => {
+      getHistoryOrders();
+    });
+
+    // 下拉刷新
+    onPullDownRefresh(() => {
+      getHistoryOrders();
+    });
+
     // 获取历史订单
     function getHistoryOrders() {
+      uni.showLoading({
+        title: '加载中'
+      });
+
       historyorder()
         .then(res => {
           $store.commit('setHistoryOrder', res);
+
+          setTimeout(() => {
+            uni.stopPullDownRefresh();
+            uni.hideLoading();
+          }, 500);
         })
         .catch(() => ({}));
     }
