@@ -13,6 +13,7 @@ export function formatDateTime(
   if (typeof date === 'number') {
     date = new Date(date * 1000);
   }
+
   const o = {
     // 月份
     'M+': (date as Date).getMonth() + 1,
@@ -29,11 +30,13 @@ export function formatDateTime(
     // 毫秒
     S: (date as Date).getMilliseconds()
   };
+
   if (/(y+)/.test(fmt)) {
     fmt = fmt
       .replace(RegExp.$1, (date as Date).getFullYear() + '')
       .substr(4 - RegExp.$1.length);
   }
+
   for (const k in o) {
     if (new RegExp('(' + k + ')').test(fmt)) {
       fmt = fmt.replace(
@@ -42,5 +45,6 @@ export function formatDateTime(
       );
     }
   }
+
   return fmt;
 }

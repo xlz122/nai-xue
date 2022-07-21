@@ -28,8 +28,10 @@
   </view>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'ListCell',
   props: {
     // 是否有箭头
@@ -85,71 +87,18 @@ export default {
       default: 0
     }
   },
-  methods: {
-    handleClick() {
-      this.$emit('click', {
-        index: this.index
-      });
+  setup(props, { emit }) {
+    function handleClick() {
+      emit('click', { index: props.index });
     }
+
+    return {
+      handleClick
+    };
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>
-.tui-list-cell {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.tui-radius {
-  border-radius: 12rpx;
-  overflow: hidden;
-}
-
-.tui-cell-hover {
-  background: #f7f7f9 !important;
-}
-
-.tui-list-cell::after {
-  content: '';
-  position: absolute;
-  border-bottom: 2rpx solid #eee;
-  -webkit-transform: scaleY(0.8);
-  transform: scaleY(0.8);
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-.tui-line-left::after {
-  left: 30rpx !important;
-}
-
-.tui-line-right::after {
-  right: 30rpx !important;
-}
-
-.tui-cell-last::after {
-  border-bottom: 0 !important;
-}
-
-// .arrow {
-// 	font-size: 44rpx;
-// 	line-height: 100%;
-// 	color: $text-color-grey;
-// 	position: relative;
-// 	margin-right: -12rpx;
-// }
-
-.arrow {
-  width: 50rpx;
-  height: 50rpx;
-  position: relative;
-  margin-right: -10rpx;
-  flex-shrink: 0;
-}
+@import './list-cell.scss';
 </style>

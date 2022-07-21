@@ -74,7 +74,7 @@
               ></image>
             </view>
           </view>
-          <view class="member-gifts">
+          <view class="member-gifts" @tap="jumpPackages">
             <image class="mark-img" src="/static/images/index/hyjb.png"></image>
             <view>会员劵包</view>
             <view class="right-img">
@@ -143,6 +143,20 @@ export default defineComponent({
       });
     }
 
+    // 券包商品
+    function jumpPackages(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/index/packages/Packages'
+      });
+    }
+
     // 跳转菜单
     function jumpDrink(): void {
       uni.switchTab({
@@ -169,6 +183,7 @@ export default defineComponent({
       userInfo,
       jumpMemberCode,
       jumpInvite,
+      jumpPackages,
       jumpDrink,
       jumpAddress
     };
