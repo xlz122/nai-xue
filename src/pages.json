@@ -49,14 +49,6 @@
 			}
 		},
 		{
-			"path": "pages/index/invite/Invite",
-			"style": {
-				"navigationBarTitleText": "买茶送包",
-				"navigationBarTextStyle": "black",
-				"navigationBarBackgroundColor": "#ffffff"
-			}
-		},
-		{
 			"path": "pages/drink/drink",
 			"style": {
 				"navigationBarTitleText": "菜单",
@@ -81,11 +73,20 @@
 			}
 		},
 		{
-			"path": "pages/mine/member-code/MemberCode",
+			"path": "pages/index/invite/Invite",
 			"style": {
-				"navigationBarTitleText": "会员码",
+				"navigationBarTitleText": "买茶送包",
 				"navigationBarTextStyle": "black",
 				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/index/packages/Packages",
+			"style": {
+				"navigationBarTitleText": "券包商品",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -100,6 +101,14 @@
 			"path": "pages/history-order/order-detail/OrderDetail",
 			"style": {
 				"navigationBarTitleText": "订单详情",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/mine/member-code/MemberCode",
+			"style": {
+				"navigationBarTitleText": "会员码",
 				"navigationBarTextStyle": "black",
 				"navigationBarBackgroundColor": "#ffffff"
 			}

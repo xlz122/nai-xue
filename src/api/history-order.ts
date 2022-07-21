@@ -191,7 +191,7 @@ const orderlist = [
     ]
   },
   {
-    coupon_name: '优惠券：省28元',
+    coupon_name: '优惠券: 省28元',
     receive_at: 0,
     pay_mode: '微信支付',
     pay_user_name: 'tinypuppet',
@@ -218,7 +218,7 @@ const orderlist = [
     send_status: 0,
     discount: [
       {
-        summary: '优惠券：省28.00元，茶饮满二赠一券',
+        summary: '优惠券: 省28.00元，茶饮满二赠一券',
         amount: '28.00',
         method: 'coupon',
         order_no: 'D5E7A064EA50054115',
@@ -325,7 +325,7 @@ const orderlist = [
     ]
   },
   {
-    coupon_name: '优惠券：省28元',
+    coupon_name: '优惠券: 省28元',
     receive_at: 0,
     pay_mode: '微信支付',
     pay_user_name: 'tinypuppet',
@@ -352,7 +352,7 @@ const orderlist = [
     send_status: 0,
     discount: [
       {
-        summary: '优惠券：省28.00元，茶饮满二赠一券',
+        summary: '优惠券: 省28.00元，茶饮满二赠一券',
         amount: '28.00',
         method: 'coupon',
         order_no: 'D5E7A064EA50054115',
@@ -709,7 +709,7 @@ const orderlist = [
     ]
   },
   {
-    coupon_name: '优惠券：省28元',
+    coupon_name: '优惠券: 省28元',
     receive_at: 0,
     pay_mode: '微信支付',
     pay_user_name: 'tinypuppet',
@@ -736,7 +736,7 @@ const orderlist = [
     send_status: 0,
     discount: [
       {
-        summary: '优惠券：省28.00元，茶饮满二赠一券',
+        summary: '优惠券: 省28.00元，茶饮满二赠一券',
         amount: '28.00',
         method: 'coupon',
         order_no: 'D5E7A064EA50054115',

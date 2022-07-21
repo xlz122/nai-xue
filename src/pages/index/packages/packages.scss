@@ -1,0 +1,34 @@
+uni-button[type='primary'] {
+  color: #ffffff;
+  background-color: #ADB838;
+}
+
+uni-button[type='primary'][plain] {
+  background-color: #fff;
+  color: #ADB838;
+  border: 0.03125rem solid #ADB838;
+}
+
+.container {
+  padding-bottom: -150rpx;
+}
+
+.pay-btn {
+  height: 50rpx;
+  width: 120rpx;
+  font-size: $font-size-sm;
+  border-radius: 50rpx;
+  padding: 0;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.ply-records {
+  position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1030;
+  width: 100%;
+  font-size: 28rpx;
+}

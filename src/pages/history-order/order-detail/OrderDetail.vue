@@ -165,7 +165,6 @@ import { defineComponent, ref, computed } from 'vue';
 import { useStore } from 'vuex';
 import { onLoad } from '@dcloudio/uni-app';
 import { formatDateTime } from '@/utils/utils';
-import { LoopType } from '@/types/types';
 import ListCell from '@/components/list-cell/ListCell.vue';
 
 export default defineComponent({
@@ -184,7 +183,7 @@ export default defineComponent({
 
     onLoad(({ id }) => {
       order.value = historyOrder.value.find(
-        (item: LoopType) => item.id === Number(id)
+        (item: { id: number }) => item.id === Number(id)
       );
     });
 
