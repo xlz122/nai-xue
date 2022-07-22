@@ -113,10 +113,12 @@
 <script lang="ts">
 /* global uni */
 import { defineComponent, ref, reactive, computed } from 'vue';
+import { useStore } from 'vuex';
 import { onLoad } from '@dcloudio/uni-app';
 import Modal from '@/components/modal/Modal.vue';
 
 type Packages = {
+  amount: number | string;
   coupons?: {
     coupon_num: number;
   }[];
@@ -128,7 +130,13 @@ export default defineComponent({
     Modal
   },
   setup() {
-    const packages = ref<Packages>({});
+    const $store = useStore();
+
+    const userInfo = computed<{ balance: number | string }>(
+      () => $store.getters.userInfo
+    );
+
+    const packages = ref<Omit<Packages, 'amount'>>({});
 
     const couponNum = computed(() => {
       return packages.value?.coupons?.reduce(
@@ -148,10 +156,39 @@ export default defineComponent({
       });
     }
 
-    function pay(): void {
-      uni.showToast({
-        title: '购买',
-        icon: 'none'
+    function pay(): boolean | undefined {
+      // 余额不足
+      if (
+        Number(userInfo.value.balance) <
+        Number((packages.value as Pick<Packages, 'amount'>)?.amount)
+      ) {
+        uni.showToast({
+          title: '余额不足',
+          icon: 'none'
+        });
+
+        setTimeout(() => {
+          jumpBalance();
+        }, 1500);
+        return false;
+      }
+
+      uni.showLoading({
+        title: '购买中...'
+      });
+
+      setTimeout(() => {
+        uni.showToast({
+          title: '购买成功',
+          icon: 'success'
+        });
+      }, 500);
+    }
+
+    // 跳转余额储值
+    function jumpBalance(): void {
+      uni.navigateTo({
+        url: '/pages/balance/Balance'
       });
     }
 

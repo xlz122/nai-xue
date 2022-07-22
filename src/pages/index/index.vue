@@ -21,7 +21,7 @@
         </view>
       </view>
       <view class="info">
-        <view class="integral_section">
+        <view class="integral_section" @tap="jumpIntegrals">
           <view class="top">
             <text class="title">我的积分</text>
             <text class="value">
@@ -87,7 +87,7 @@
         </view>
       </view>
       <view class="member-news">
-        <view class="header">
+        <view class="header" @tap="news">
           <view class="title">会员新鲜事</view>
           <view class="iconfont iconRightbutton"></view>
         </view>
@@ -114,6 +114,21 @@ export default defineComponent({
 
     const isLogin = computed<boolean>(() => $store.getters.isLogin);
     const userInfo = computed(() => $store.getters.userInfo);
+
+    // 我的积分
+    function jumpIntegrals(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.showToast({
+        title: '我的积分',
+        icon: 'none'
+      });
+    }
 
     // 会员码
     function jumpMemberCode(): boolean | undefined {
@@ -157,6 +172,14 @@ export default defineComponent({
       });
     }
 
+    // 会员新鲜事
+    function news(): void {
+      uni.showToast({
+        title: '会员新鲜事',
+        icon: 'none'
+      });
+    }
+
     // 跳转菜单
     function jumpDrink(): void {
       uni.switchTab({
@@ -181,9 +204,11 @@ export default defineComponent({
     return {
       isLogin,
       userInfo,
+      jumpIntegrals,
       jumpMemberCode,
       jumpInvite,
       jumpPackages,
+      news,
       jumpDrink,
       jumpAddress
     };
