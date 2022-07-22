@@ -90,6 +90,14 @@
 			}
 		},
 		{
+			"path": "pages/index/package-detail/PackageDetail",
+			"style": {
+				"navigationBarTitleText": "购买劵包",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/history-order/HistoryOrder",
 			"style": {
 				"navigationBarTitleText": "历史订单",

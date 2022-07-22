@@ -1,0 +1,60 @@
+uni-button[type='primary'] {
+  color: #ffffff;
+  background-color: #ADB838;
+}
+
+uni-button[type='primary'][plain] {
+  background-color: #fff;
+  color: #ADB838;
+  border: 0.03125rem solid #ADB838;
+}
+
+.pay-box {
+  padding: 10rpx 0;
+  height: 100rpx;
+}
+
+.coupon {
+  border-radius: 6rpx;
+  padding: 20rpx 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: $box-shadow;
+  position: relative;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    background-color: $bg-color;
+    width: 30rpx;
+    height: 30rpx;
+    bottom: 70rpx;
+    left: -15rpx;
+    border-radius: 100%;
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    background-color: $bg-color;
+    width: 30rpx;
+    height: 30rpx;
+    bottom: 70rpx;
+    right: -15rpx;
+    border-radius: 100%;
+  }
+
+  .bottom {
+    height: 70rpx;
+    position: relative;
+
+    &::before {
+      content: "";
+      border-top: 2rpx dashed #e2e2e2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      transform: scaleY(0.2);
+    }
+  }
+}

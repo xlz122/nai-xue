@@ -87,6 +87,7 @@ export default defineComponent({
       default: 0
     }
   },
+  emits: ['click'],
   setup(props, { emit }) {
     function handleClick() {
       emit('click', { index: props.index });
