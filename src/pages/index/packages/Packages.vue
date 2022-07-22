@@ -87,10 +87,11 @@ export default defineComponent({
         .catch(() => ({}));
     }
 
-    function pay(): void {
-      uni.showToast({
-        title: '去购买',
-        icon: 'none'
+    function pay(item: unknown): void {
+      uni.setStorageSync('packages', item);
+
+      uni.navigateTo({
+        url: '/pages/index/package-detail/PackageDetail'
       });
     }
 
