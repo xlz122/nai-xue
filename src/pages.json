@@ -123,6 +123,14 @@
 			}
 		},
 		{
+			"path": "pages/balance/Balance",
+			"style": {
+				"navigationBarTitleText": "余额储值",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "登录",

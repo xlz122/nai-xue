@@ -63,7 +63,7 @@
         </view>
         <view class="font-size-sm text-color-assist">积分商城</view>
       </view>
-      <view class="user-grid">
+      <view class="user-grid" @tap="jumpBalance">
         <view class="value font-size-extra-lg font-weight-bold text-color-base">
           {{ isLogin ? userInfo?.balance : '***' }}
         </view>
@@ -169,6 +169,20 @@ export default defineComponent({
       });
     }
 
+    // 跳转余额储值
+    function jumpBalance(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/balance/Balance'
+      });
+    }
+
     function jumpLogin(): void {
       uni.navigateTo({
         url: '/pages/login/login'
@@ -179,6 +193,7 @@ export default defineComponent({
       isLogin,
       userInfo,
       avatarChange,
+      jumpBalance,
       jumpLogin
     };
   }
