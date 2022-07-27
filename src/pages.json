@@ -131,6 +131,14 @@
 			}
 		},
 		{
+			"path": "pages/gift-card/GiftCard",
+			"style": {
+				"navigationBarTitleText": "礼品卡列表",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "登录",
