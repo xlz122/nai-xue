@@ -79,7 +79,7 @@ import { onLoad } from '@dcloudio/uni-app';
 import { rechargeList } from '@/api/balance';
 
 type Recharge = {
-  options: any;
+  options: unknown[];
   index: number;
 };
 
@@ -90,7 +90,7 @@ export default defineComponent({
 
     const userInfo = computed(() => $store.getters.userInfo);
 
-    const recharge = reactive({
+    const recharge = reactive<Recharge>({
       options: [],
       index: 0
     });

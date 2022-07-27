@@ -96,7 +96,7 @@
           </view>
           <view>收货地址</view>
         </view>
-        <view class="grid">
+        <view class="grid" @tap="jumpServices">
           <view class="image">
             <image src="/static/images/mine/gdfw.png"></image>
           </view>
@@ -161,12 +161,27 @@ export default defineComponent({
       });
     }
 
+    // 跳转更多服务
+    function jumpServices(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/mine/services/Services'
+      });
+    }
+
     return {
       isLogin,
       userInfo,
       jumpMemberCode,
       jumpLogin,
-      jumpHistoryOrder
+      jumpHistoryOrder,
+      jumpServices
     };
   }
 });

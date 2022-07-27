@@ -118,7 +118,7 @@ import { onLoad } from '@dcloudio/uni-app';
 import Modal from '@/components/modal/Modal.vue';
 
 type Packages = {
-  amount: number | string;
+  amount?: number | string;
   coupons?: {
     coupon_num: number;
   }[];
@@ -160,7 +160,7 @@ export default defineComponent({
       // 余额不足
       if (
         Number(userInfo.value.balance) <
-        Number((packages.value as Pick<Packages, 'amount'>)?.amount)
+        Number((packages.value as Packages)?.amount)
       ) {
         uni.showToast({
           title: '余额不足',

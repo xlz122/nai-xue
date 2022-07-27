@@ -139,6 +139,22 @@
 			}
 		},
 		{
+			"path": "pages/mine/services/Services",
+			"style": {
+				"navigationBarTitleText": "更多服务",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/mine/services/help-center/HelpCenter",
+			"style": {
+				"navigationBarTitleText": "帮助中心",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "登录",

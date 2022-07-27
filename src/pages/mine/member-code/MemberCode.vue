@@ -23,11 +23,11 @@
             <view class="value">{{ userInfo?.pointNum || 0 }}</view>
             <view>积分</view>
           </view>
-          <view class="user-grid">
+          <view class="user-grid" @tap="jumpBalance">
             <view class="value">{{ userInfo?.balance || 0 }}</view>
             <view>余额</view>
           </view>
-          <view class="user-grid">
+          <view class="user-grid" @tap="jumpGiftCard">
             <view class="value">{{ userInfo?.giftBalance || 0 }}</view>
             <view>礼品卡</view>
           </view>
@@ -66,6 +66,7 @@
 </template>
 
 <script lang="ts">
+/* global uni */
 import { defineComponent, computed } from 'vue';
 import { useStore } from 'vuex';
 
@@ -77,9 +78,39 @@ export default defineComponent({
     const isLogin = computed<boolean>(() => $store.getters.isLogin);
     const userInfo = computed(() => $store.getters.userInfo);
 
+    // 跳转余额储值
+    function jumpBalance(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/balance/Balance'
+      });
+    }
+
+    // 跳转礼品卡
+    function jumpGiftCard(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/gift-card/GiftCard'
+      });
+    }
+
     return {
       isLogin,
-      userInfo
+      userInfo,
+      jumpBalance,
+      jumpGiftCard
     };
   }
 });
