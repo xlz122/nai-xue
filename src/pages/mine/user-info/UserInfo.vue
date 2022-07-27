@@ -69,7 +69,7 @@
         </view>
         <view class="font-size-sm text-color-assist">余额</view>
       </view>
-      <view class="user-grid">
+      <view class="user-grid" @tap="jumpGiftCard">
         <view class="value font-size-extra-lg font-weight-bold text-color-base">
           {{ isLogin ? userInfo?.giftBalance : '***' }}
         </view>
@@ -183,6 +183,20 @@ export default defineComponent({
       });
     }
 
+    // 跳转礼品卡
+    function jumpGiftCard(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/gift-card/GiftCard'
+      });
+    }
+
     function jumpLogin(): void {
       uni.navigateTo({
         url: '/pages/login/login'
@@ -194,6 +208,7 @@ export default defineComponent({
       userInfo,
       avatarChange,
       jumpBalance,
+      jumpGiftCard,
       jumpLogin
     };
   }
