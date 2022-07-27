@@ -168,7 +168,7 @@ import { formatDateTime } from '@/utils/utils';
 import ListCell from '@/components/list-cell/ListCell.vue';
 
 export default defineComponent({
-  name: 'HistoryOrder',
+  name: 'OrderDetail',
   components: {
     ListCell
   },
