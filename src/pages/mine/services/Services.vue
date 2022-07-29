@@ -7,14 +7,14 @@
       </view>
       <image class="navigator" src="/static/images/navigator-1.png"></image>
     </view>
-    <view class="cell" @tap="tip">
+    <view class="cell" @tap="tip('关于奈雪')">
       <view class="content">
         <image class="icon" src="/static/images/services/gynx.png"></image>
         <view>关于奈雪</view>
       </view>
       <image class="navigator" src="/static/images/navigator-1.png"></image>
     </view>
-    <view class="cell" @tap="tip">
+    <view class="cell" @tap="tip('奈雪礼物')">
       <view class="content">
         <image class="icon" src="/static/images/services/wdzl.png"></image>
         <view>奈雪礼物</view>
@@ -37,9 +37,9 @@ export default defineComponent({
       });
     }
 
-    function tip(): void {
+    function tip(title: string): void {
       uni.showToast({
-        title: '该功能暂未开发',
+        title,
         icon: 'none'
       });
     }
