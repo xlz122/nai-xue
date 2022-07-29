@@ -123,6 +123,14 @@
 			}
 		},
 		{
+			"path": "pages/coupons/Coupons",
+			"style": {
+				"navigationBarTitleText": "我的卡券",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/balance/Balance",
 			"style": {
 				"navigationBarTitleText": "余额储值",

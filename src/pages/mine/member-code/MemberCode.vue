@@ -15,7 +15,7 @@
           {{ userInfo?.nickname }}
         </view>
         <view class="w-100 d-flex font-size-sm text-color-assist mb-30">
-          <view class="user-grid">
+          <view class="user-grid" @tap="jumpCoupons">
             <view class="value">{{ userInfo?.couponNum || 0 }}</view>
             <view>奈雪券</view>
           </view>
@@ -78,6 +78,20 @@ export default defineComponent({
     const isLogin = computed<boolean>(() => $store.getters.isLogin);
     const userInfo = computed(() => $store.getters.userInfo);
 
+    // 跳转奈雪券
+    function jumpCoupons(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/coupons/Coupons'
+      });
+    }
+
     // 跳转余额储值
     function jumpBalance(): boolean | undefined {
       if (!isLogin.value) {
@@ -109,6 +123,7 @@ export default defineComponent({
     return {
       isLogin,
       userInfo,
+      jumpCoupons,
       jumpBalance,
       jumpGiftCard
     };

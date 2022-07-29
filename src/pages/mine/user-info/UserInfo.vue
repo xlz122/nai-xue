@@ -51,7 +51,7 @@
       </view>
     </view>
     <view class="w-100 d-flex align-items-center just-content-center">
-      <view class="user-grid">
+      <view class="user-grid" @tap="jumpCoupons">
         <view class="value font-size-extra-lg font-weight-bold text-color-base">
           {{ isLogin ? userInfo?.couponNum : '***' }}
         </view>
@@ -169,6 +169,20 @@ export default defineComponent({
       });
     }
 
+    // 跳转奈雪券
+    function jumpCoupons(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/coupons/Coupons'
+      });
+    }
+
     // 跳转余额储值
     function jumpBalance(): boolean | undefined {
       if (!isLogin.value) {
@@ -207,6 +221,7 @@ export default defineComponent({
       isLogin,
       userInfo,
       avatarChange,
+      jumpCoupons,
       jumpBalance,
       jumpGiftCard,
       jumpLogin
