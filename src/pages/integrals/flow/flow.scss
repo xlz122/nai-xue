@@ -1,0 +1,23 @@
+.masthead {
+  height: 300rpx;
+  position: relative;
+
+  .point-num {
+    font-size: 72rpx;
+    color: $text-color-base;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    border-bottom: 2rpx solid #e2e2e2;
+    transform: scaleY(0.8);
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+.tui-list-cell:after {
+  transform: scaleY(0.8);
+}
