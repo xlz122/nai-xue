@@ -19,7 +19,7 @@
             <view class="value">{{ userInfo?.couponNum || 0 }}</view>
             <view>奈雪券</view>
           </view>
-          <view class="user-grid">
+          <view class="user-grid" @tap="jumpIntegrals">
             <view class="value">{{ userInfo?.pointNum || 0 }}</view>
             <view>积分</view>
           </view>
@@ -92,6 +92,20 @@ export default defineComponent({
       });
     }
 
+    // 跳转积分商城
+    function jumpIntegrals(): boolean | undefined {
+      if (!isLogin.value) {
+        uni.navigateTo({
+          url: '/pages/login/login'
+        });
+        return false;
+      }
+
+      uni.navigateTo({
+        url: '/pages/integrals/Integrals'
+      });
+    }
+
     // 跳转余额储值
     function jumpBalance(): boolean | undefined {
       if (!isLogin.value) {
@@ -124,6 +138,7 @@ export default defineComponent({
       isLogin,
       userInfo,
       jumpCoupons,
+      jumpIntegrals,
       jumpBalance,
       jumpGiftCard
     };

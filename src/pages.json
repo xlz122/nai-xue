@@ -131,6 +131,17 @@
 			}
 		},
 		{
+			"path": "pages/integrals/Integrals",
+			"style": {
+				"navigationStyle": "custom",
+				"onReachBottomDistance": 50,
+				"mp-alipay": {
+					"transparentTitle": "always",
+					"titlePenetrate": "YES"
+				}
+			}
+		},
+		{
 			"path": "pages/balance/Balance",
 			"style": {
 				"navigationBarTitleText": "余额储值",
