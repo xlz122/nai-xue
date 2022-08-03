@@ -212,7 +212,7 @@ export default defineComponent({
     // 跳转积分明细
     function jumpIntegralsFlow(): void {
       uni.navigateTo({
-        url: '/pages/integrals/flow'
+        url: '/pages/integrals/flow/Flow'
       });
     }
 
