@@ -1,0 +1,47 @@
+uni-button[type='primary']{
+  background-color: #adb838;
+  color: #fff;
+  border: 0.03125rem solid #adb838;
+}
+
+.content {
+  padding-bottom: 120rpx;
+}
+
+.btn-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120rpx;
+  background-color: #ffffff;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50rem !important;
+  }
+}
+
+.review-form {
+  background-color: #ffffff;
+  padding: 20rpx 0;
+}
+
+.review-textarea-form {
+  padding: 0 30rpx;
+
+  textarea {
+    width: 100%;
+    background-color: $bg-color;
+    padding: 30rpx;
+    font-size: $font-size-sm;
+    color: $font-size-base;
+  }
+}

@@ -115,6 +115,14 @@
 			}
 		},
 		{
+			"path": "pages/history-order/review/Review",
+			"style": {
+				"navigationBarTitleText": "评价",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/mine/member-code/MemberCode",
 			"style": {
 				"navigationBarTitleText": "会员码",
