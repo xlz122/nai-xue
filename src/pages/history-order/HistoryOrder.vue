@@ -64,7 +64,7 @@
                 </button>
                 <button v-else type="primary" plain size="mini">开发票</button>
               </view>
-              <view>
+              <view @tap.stop="jumpReview(item)">
                 <button type="primary" plain size="mini">去评价</button>
               </view>
             </view>
@@ -133,10 +133,26 @@ export default defineComponent({
       });
     }
 
+    // 跳转评价
+    function jumpReview(item: {
+      store: { name: string };
+      completed_time: string;
+      typeCate: string;
+    }): void {
+      const storename = item?.store?.name || '';
+      const date = item?.completed_time?.split(' ')[0] || '';
+      const typeCate = item?.typeCate || '';
+
+      uni.navigateTo({
+        url: `/pages/history-order/review/Review?storename=${storename}&typeCate=${typeCate}&date=${date}`
+      });
+    }
+
     return {
       isLogin,
       historyOrder,
-      jumpOrderDetail
+      jumpOrderDetail,
+      jumpReview
     };
   }
 });

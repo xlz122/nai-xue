@@ -149,7 +149,7 @@
       <view class="item" v-if="order?.invoice_status > 0">
         <button type="primary">查看发票</button>
       </view>
-      <view class="item">
+      <view class="item" @tap="jumpReview(order)">
         <button type="primary" plain>去评价</button>
       </view>
       <view class="item">
@@ -194,11 +194,27 @@ export default defineComponent({
       });
     }
 
+    // 跳转评价
+    function jumpReview(item: {
+      store: { name: string };
+      completed_time: string;
+      typeCate: string;
+    }): void {
+      const storename = item?.store?.name || '';
+      const date = item?.completed_time?.split(' ')[0] || '';
+      const typeCate = item?.typeCate || '';
+
+      uni.navigateTo({
+        url: `/pages/history-order/review/Review?storename=${storename}&typeCate=${typeCate}&date=${date}`
+      });
+    }
+
     return {
       formatDateTime,
       isLogin,
       order,
-      jumpDrink
+      jumpDrink,
+      jumpReview
     };
   }
 });
