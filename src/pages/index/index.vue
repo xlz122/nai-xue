@@ -115,7 +115,7 @@ export default defineComponent({
     const isLogin = computed<boolean>(() => $store.getters.isLogin);
     const userInfo = computed(() => $store.getters.userInfo);
 
-    // 我的积分
+    // 跳转积分商城
     function jumpIntegrals(): boolean | undefined {
       if (!isLogin.value) {
         uni.navigateTo({
@@ -124,9 +124,8 @@ export default defineComponent({
         return false;
       }
 
-      uni.showToast({
-        title: '我的积分',
-        icon: 'none'
+      uni.navigateTo({
+        url: '/pages/integrals/Integrals'
       });
     }
 
