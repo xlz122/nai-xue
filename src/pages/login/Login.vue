@@ -100,15 +100,53 @@ export default defineComponent({
           $store.commit('setUserInfo', res);
 
           // 返回上一页
-          uni.navigateBack({
-            delta: 1
+          uni.navigateBack({ delta: 1 });
+        })
+        .catch(() => ({}));
+    }
+
+    // 微信登录
+    async function getUserInfo(e: any): Promise<boolean | undefined> {
+      const { errMsg, userInfo } = e.detail;
+
+      // 授权失败使用h5用户信息
+      if (errMsg !== 'getUserInfo:ok') {
+        uni.showModal({
+          title: '提示',
+          content: '您取消了授权登录，请重新授权',
+          showCancel: false
+        });
+
+        userinfo()
+          .then(res => {
+            $store.commit('setUserInfo', res);
+
+            // 返回上一页
+            uni.navigateBack({ delta: 1 });
+          })
+          .catch(() => ({}));
+        return false;
+      }
+
+      userinfo()
+        .then(res => {
+          const member = Object.assign(res, {
+            ...userInfo,
+            avatarUrl: userInfo.avatar,
+            nickName: userInfo.nickname,
           });
+
+          $store.commit('setUserInfo', member);
+
+          // 返回上一页
+          uni.navigateBack({ delta: 1 });
         })
         .catch(() => ({}));
     }
 
     return {
-      login
+      login,
+      getUserInfo
     };
   }
 });
