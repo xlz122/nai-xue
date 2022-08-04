@@ -133,7 +133,7 @@ export default defineComponent({
           const member = Object.assign(res, {
             ...userInfo,
             avatarUrl: userInfo.avatar,
-            nickName: userInfo.nickname,
+            nickName: userInfo.nickname
           });
 
           $store.commit('setUserInfo', member);
