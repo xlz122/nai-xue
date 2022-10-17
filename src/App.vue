@@ -2,7 +2,7 @@
 import { onLaunch, onShow, onHide } from '@dcloudio/uni-app';
 
 onLaunch(() => {
-  console.log('App Launc1h');
+  console.log('App Launch');
 });
 
 onShow(() => {
@@ -13,3 +13,5 @@ onHide(() => {
   console.log('App Hide');
 });
 </script>
+
+<style></style>
