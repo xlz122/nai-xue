@@ -89,8 +89,8 @@
                 index <= active && index !== 0
                   ? activeColor
                   : index === 0
-                  ? 'transparent'
-                  : deactiveColor
+                    ? 'transparent'
+                    : deactiveColor
             }"
           ></view>
           <template v-if="item?.circle">
@@ -139,8 +139,8 @@
                 index < active && index !== options.length - 1
                   ? activeColor
                   : index === options.length - 1
-                  ? 'transparent'
-                  : deactiveColor
+                    ? 'transparent'
+                    : deactiveColor
             }"
           ></view>
         </view>

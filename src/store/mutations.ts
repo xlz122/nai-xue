@@ -1,4 +1,4 @@
-import { State } from '@/store/state';
+import type { State } from '@/store/state';
 
 type Mutations<T, U = any> = {
   [key: string]: (state: T, payload: U) => void;

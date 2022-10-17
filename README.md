@@ -4,9 +4,9 @@
 
 ## 简介
 
-一套仿奈雪の茶小程序的小程序模板。
+本项目是一个仿写[奈雪の茶小程序模板](https://github.com/tinypuppet/nxdc-milktea)项目
 
-本项目仿写 ``tinypuppet`` 的奈雪の茶项目，原项目地址: [https://github.com/tinypuppet/nxdc-milktea](https://github.com/tinypuppet/nxdc-milktea)。
+项目使用vue3重构，vue 2版本可查看[vue2](https://github.com/xlz122/nai-xue/tree/vue2)分支
 
 ## 项目使用技术栈
 
@@ -51,5 +51,5 @@ yarn build:mp-alipay
 
 ## 写在最后
 
-* [The MIT License (MIT)](https://github.com/xlz122/uni-app-nx/blob/master/LICENSE)
+* [The MIT License (MIT)](https://github.com/xlz122/nai-xue/blob/master/LICENSE)
 * 本项目仅用于学习使用，切勿用于商业用途，否则产生的法律后果与作者无关。
