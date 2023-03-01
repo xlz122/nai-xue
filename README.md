@@ -4,13 +4,11 @@
 
 ## 简介
 
-一套仿奈雪の茶小程序的小程序模板。
+本项目仿写 ``tinypuppet`` 的[奈雪の茶](https://github.com/tinypuppet/nxdc-milktea)小程序模板项目
 
-本项目仿写 ``tinypuppet`` 的奈雪の茶项目，原项目地址: [https://github.com/tinypuppet/nxdc-milktea](https://github.com/tinypuppet/nxdc-milktea)。
+原项目使用 HBuilderX 开发，本项目使用 vue-cli 的方式开发
 
-原项目使用 HBuilderX 开发，本项目使用 vue-cli 的方式创建项目，并且使用 typescript 开发。
-
-项目兼容H5，微信小程序，支付宝小程序，安卓app，其余未测试。
+项目兼容H5 / 微信小程序 / 支付宝小程序 / 安卓app，其余未测试
 
 ## 项目使用技术栈
 
@@ -39,7 +37,7 @@
 	- 更换头像
 	- 动态订单
 
-2. 所有数据都是静态的，保存在api文件夹下。
+2. 所有数据都是静态的，保存在api文件夹下
 ## 运行
 
 启动项目
