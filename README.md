@@ -6,12 +6,12 @@
 
 本项目是一个仿写[奈雪の茶小程序模板](https://github.com/tinypuppet/nxdc-milktea)项目
 
-项目使用vue3重构，vue 2版本可查看[vue2](https://github.com/xlz122/nai-xue/tree/vue2)分支
+master分支使用vue 3进行重构，vue 2版本可查看[vue2](https://github.com/xlz122/nai-xue/tree/vue2)分支
 
 ## 项目使用技术栈
 
-* Vue全家桶
-* Vue3 Composition Api
+* Vue3
+* Uni-App
 * TypeScript
 
 ## 加入项目
@@ -47,7 +47,7 @@ yarn build:mp-alipay
 
 |首页|点餐|取餐|我的|登录|
 |---|---|---|---|---|
-|![](./src/static/design-sketch/home.jpg)|![](./src/static/design-sketch/drink.jpg)|![](./src/static/design-sketch/take-foods.jpg)|![](./src/static/design-sketch/mine.jpg)|![](./src/static/design-sketch/login.jpg)|
+|![](./preview/home.jpg)|![](./preview/drink.jpg)|![](./preview/take-foods.jpg)|![](./preview/mine.jpg)|![](./preview/login.jpg)|
 
 ## 写在最后
 
